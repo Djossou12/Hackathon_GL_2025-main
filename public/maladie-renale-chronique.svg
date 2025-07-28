@@ -1,0 +1,109 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond -->
+  <rect width="800" height="600" fill="#f5f5f5"/>
+  
+  <!-- Titre -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#2c3e50">Maladie Chronique Rénale</text>
+  
+  <!-- Rein gauche - montrant un rein sain -->
+  <g transform="translate(200, 250)">
+    <!-- Corps du rein sain -->
+    <path d="M-80,0 C-80,-70 -30,-120 40,-70 C110,-20 110,70 40,100 C-30,130 -80,70 -80,0 Z" fill="#f08a8a" stroke="#c0392b" stroke-width="2"/>
+    <!-- Structure interne -->
+    <path d="M-50,0 C-50,-40 -10,-80 30,-50 C80,-10 80,50 30,70 C-10,90 -50,40 -50,0 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="1" opacity="0.7"/>
+    <!-- Uretère -->
+    <path d="M40,100 C45,120 45,140 40,160" stroke="#c0392b" stroke-width="4" fill="none"/>
+    <!-- Texte -->
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Rein Sain</text>
+  </g>
+  
+  <!-- Rein droit - montrant un rein malade -->
+  <g transform="translate(600, 250)">
+    <!-- Corps du rein malade -->
+    <path d="M-80,0 C-80,-70 -30,-120 40,-70 C110,-20 110,70 40,100 C-30,130 -80,70 -80,0 Z" fill="#baccd9" stroke="#2980b9" stroke-width="2"/>
+    <!-- Structures internes abîmées -->
+    <path d="M-50,0 C-50,-40 -10,-80 30,-50 C80,-10 80,50 30,70 C-10,90 -50,40 -50,0 Z" fill="#7fb3d5" stroke="#2980b9" stroke-width="1" opacity="0.7"/>
+    <!-- Fibrose et kystes -->
+    <circle cx="-40" cy="-20" r="10" fill="#95a5a6" opacity="0.7"/>
+    <circle cx="20" cy="-30" r="15" fill="#95a5a6" opacity="0.7"/>
+    <circle cx="10" cy="20" r="12" fill="#95a5a6" opacity="0.7"/>
+    <circle cx="-20" cy="30" r="8" fill="#95a5a6" opacity="0.7"/>
+    <!-- Uretère -->
+    <path d="M40,100 C45,120 45,140 40,160" stroke="#2980b9" stroke-width="4" fill="none"/>
+    <!-- Texte -->
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Rein Malade</text>
+  </g>
+  
+  <!-- Symboles représentant les facteurs de risque -->
+  <g transform="translate(400, 200)">
+    <!-- Hypertension -->
+    <g transform="translate(-250, -100)">
+      <circle cx="0" cy="0" r="25" fill="#e74c3c" opacity="0.8"/>
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">HTA</text>
+    </g>
+    <!-- Diabète -->
+    <g transform="translate(250, -100)">
+      <circle cx="0" cy="0" r="25" fill="#9b59b6" opacity="0.8"/>
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">Diabète</text>
+    </g>
+    <!-- Age -->
+    <g transform="translate(-150, -150)">
+      <circle cx="0" cy="0" r="25" fill="#3498db" opacity="0.8"/>
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">Âge</text>
+    </g>
+    <!-- Obésité -->
+    <g transform="translate(150, -150)">
+      <circle cx="0" cy="0" r="25" fill="#f39c12" opacity="0.8"/>
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Obésité</text>
+    </g>
+  </g>
+  
+  <!-- Stades de la maladie rénale chronique -->
+  <g transform="translate(400, 450)">
+    <rect x="-350" y="0" width="700" height="60" rx="10" ry="10" fill="#ecf0f1" stroke="#7f8c8d" stroke-width="2"/>
+    
+    <!-- Stades -->
+    <g transform="translate(-300, 30)">
+      <rect x="0" y="-15" width="100" height="30" rx="5" ry="5" fill="#2ecc71" opacity="0.7"/>
+      <text x="50" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stade 1</text>
+    </g>
+    
+    <g transform="translate(-150, 30)">
+      <rect x="0" y="-15" width="100" height="30" rx="5" ry="5" fill="#27ae60" opacity="0.7"/>
+      <text x="50" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stade 2</text>
+    </g>
+    
+    <g transform="translate(0, 30)">
+      <rect x="0" y="-15" width="100" height="30" rx="5" ry="5" fill="#f1c40f" opacity="0.7"/>
+      <text x="50" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stade 3</text>
+    </g>
+    
+    <g transform="translate(150, 30)">
+      <rect x="0" y="-15" width="100" height="30" rx="5" ry="5" fill="#e67e22" opacity="0.7"/>
+      <text x="50" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stade 4</text>
+    </g>
+    
+    <g transform="translate(300, 30)">
+      <rect x="0" y="-15" width="100" height="30" rx="5" ry="5" fill="#e74c3c" opacity="0.7"/>
+      <text x="50" y="5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stade 5</text>
+    </g>
+    
+    <text x="0" y="-15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Progression de la Maladie Rénale Chronique</text>
+  </g>
+  
+  <!-- Flèches vers les facteurs de risque -->
+  <path d="M280,250 L200,125" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M520,250 L600,125" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Marqueur de flèche -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Légende de symptômes -->
+  <g transform="translate(400, 550)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Symptômes: hypertension, anémie, œdèmes, fatigue, troubles métaboliques</text>
+  </g>
+</svg>

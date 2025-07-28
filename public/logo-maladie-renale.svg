@@ -1,0 +1,98 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond du logo avec un léger dégradé -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f9fa" />
+      <stop offset="100%" stop-color="#ebf3f5" />
+    </linearGradient>
+    
+    <!-- Dégradé pour le rein -->
+    <linearGradient id="kidney-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5c98c9" />
+      <stop offset="100%" stop-color="#3a77a8" />
+    </linearGradient>
+    
+    <!-- Effet de brillance pour le rein -->
+    <radialGradient id="kidney-shine" cx="40%" cy="30%" r="60%" fx="40%" fy="30%">
+      <stop offset="0%" stop-color="#7fb3d5" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#3a77a8" stop-opacity="0.1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Fond du logo -->
+  <rect width="400" height="200" rx="20" ry="20" fill="url(#bg-gradient)" />
+  
+  <!-- Symbole de rein stylisé -->
+  <g transform="translate(100, 100) scale(0.9)">
+    <!-- Contour du rein -->
+    <path d="M-50,0 C-50,-40 -10,-65 30,-40 C70,-15 70,35 30,50 C-10,65 -50,40 -50,0 Z" 
+          fill="url(#kidney-gradient)" 
+          stroke="#2c3e50" 
+          stroke-width="3"
+          stroke-linejoin="round" />
+    
+    <!-- Effet de brillance -->
+    <path d="M-50,0 C-50,-40 -10,-65 30,-40 C70,-15 70,35 30,50 C-10,65 -50,40 -50,0 Z" 
+          fill="url(#kidney-shine)" 
+          stroke="none" />
+          
+    <!-- Détails du rein -->
+    <path d="M-15,-10 C-15,-25 0,-35 20,-22 C40,-10 40,20 20,28 C0,35 -15,20 -15,-10 Z" 
+          fill="#2980b9" 
+          stroke="none" 
+          opacity="0.3" />
+          
+    <!-- Uretère stylisé -->
+    <path d="M30,50 C33,60 33,70 30,80" 
+          stroke="#2c3e50" 
+          stroke-width="4" 
+          stroke-linecap="round"
+          fill="none" />
+    
+    <!-- Lignes de protection stylisées -->
+    <path d="M-20,-15 C-5,-22 15,-22 30,-15" 
+          stroke="#2c3e50" 
+          stroke-width="1.5" 
+          fill="none" 
+          opacity="0.6" />
+    <path d="M-20,15 C-5,22 15,22 30,15" 
+          stroke="#2c3e50" 
+          stroke-width="1.5" 
+          fill="none" 
+          opacity="0.6" />
+  </g>
+  
+  <!-- Symbole électrocardiogramme intégré -->
+  <path d="M200,140 L210,140 L215,120 L220,160 L225,140 L235,140" 
+        stroke="#e74c3c" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="none" />
+  
+  <!-- Texte du logo -->
+  <g transform="translate(245, 90)">
+    <text x="0" y="0" 
+          font-family="Arial, sans-serif" 
+          font-size="24" 
+          font-weight="bold" 
+          fill="#2c3e50">Néphro</text>
+    <text x="0" y="30" 
+          font-family="Arial, sans-serif" 
+          font-size="24" 
+          font-weight="bold" 
+          fill="#3498db">Santé</text>
+    <text x="0" y="55" 
+          font-family="Arial, sans-serif" 
+          font-size="12" 
+          fill="#7f8c8d">Prévention et suivi rénal</text>
+  </g>
+  
+  <!-- Cercle de protection -->
+  <circle cx="100" cy="100" r="70" 
+          stroke="#3498db" 
+          stroke-width="2.5" 
+          stroke-dasharray="8,4" 
+          fill="none" 
+          opacity="0.7" />
+</svg>
