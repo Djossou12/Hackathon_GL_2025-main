@@ -1,4 +1,4 @@
 {
-  "/patients/dossier/[id]/page": "app/patients/dossier/[id]/page.js",
+  "/api/patients/route": "app/api/patients/route.js",
   "/patients/page": "app/patients/page.js"
 }
