@@ -43,9 +43,14 @@ export async function PUT(req: NextRequest) {
     });
 
     return NextResponse.json(updatedPatient);
-  } catch (error) {
-    console.error('Erreur mise à jour patient:', error);
-    return NextResponse.json({ error: 'Erreur mise à jour' }, { status: 500 });
+  } 
+  catch (error) {
+    console.error('Erreur lors du chargement des patients:', error);
+    const errorMessage = typeof error === 'object' && error !== null && 'message' in error ? (error as { message: string }).message : String(error);
+    return NextResponse.json(
+      { error: 'Erreur lors de la récupération des patients', details: errorMessage },
+      { status: 500 }
+    );
   }
 }
 

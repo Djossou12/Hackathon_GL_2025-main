@@ -13,11 +13,6 @@ type FeatureCardProps = {
   description: string;
 };
 
-type TeamMemberProps = {
-  name: string;
-  role: string;
-  img?: React.ReactNode;
-};
 
 
 
@@ -32,23 +27,6 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
   </motion.div>
 );
 
-const TeamMember = ({ name, role, img }: TeamMemberProps) => (
-  <motion.div 
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    className="flex flex-col items-center"
-  >
-    <div className="w-32 h-32 rounded-full bg-gray-200 mb-4 overflow-hidden border-4 border-blue-100">
-      {/* Remplacez par une image réelle */}
-      <div className="bg-gray-300 w-full h-full flex items-center justify-center text-gray-500">
-        {img || "Photo"}
-      </div>
-    </div>
-    <h4 className="font-bold text-gray-800">{name}</h4>
-    <p className="text-blue-600 text-sm">{role}</p>
-  </motion.div>
-);
 
 export default function About() {
   return (
@@ -181,14 +159,6 @@ export default function About() {
               Des experts en néphrologie, intelligence artificielle et expérience utilisateur unis pour améliorer les soins rénaux.
             </p>
           </motion.div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <TeamMember name="BOUSSARI Samuel" role="Développeur web/Mobile" img={undefined} />
-            <TeamMember name="SANNI BAYER S. Berenger" role="Développeur web/Mobile" img={undefined} />
-            <TeamMember name="TONON Marie-Orens" role="Développeur web/Mobile" img={undefined} />
-            <TeamMember name="AHOKPOSSI Brunel" role="Développeur web/Mobile" img={undefined} />
-            <TeamMember name="WEDJANGNON Axel" role="Développeur web/Mobile" img={undefined} />
-          </div>
         </div>
       </section>
 

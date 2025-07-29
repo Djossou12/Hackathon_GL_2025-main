@@ -12,7 +12,7 @@ model Patient {
   id            String              @id @default(uuid())
   name          String
   age           Int
-  sexe          String?
+  sexe          String
   diagnosis     String
   poids         Float?
   taille        Float?
