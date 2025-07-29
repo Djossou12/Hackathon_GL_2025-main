@@ -110,7 +110,7 @@ export default function Navigation() {
             </Link>
             <button 
               onClick={handleLogout}
-              className="block w-full text-left px-3 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition flex items-center"
+              className="w-full text-left px-3 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition flex items-center"
               aria-label="Se déconnecter de l'application"
             >
               <svg 
