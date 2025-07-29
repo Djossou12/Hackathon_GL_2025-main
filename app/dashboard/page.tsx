@@ -104,7 +104,7 @@ export default function ModernDashboard() {
           <div className="flex items-center space-x-4">
             <DateRangePicker value={dateRange} onChange={setDateRange} />
             <button
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
                 // re-fetch data on click
                 const fetchData = async () => {
@@ -130,6 +130,8 @@ export default function ModernDashboard() {
 
                 fetchData();
               }}
+              disabled={loading}
+              aria-label="Rafraîchir les données"
             >
               <FiRefreshCw className="text-gray-600" />
             </button>
@@ -137,7 +139,7 @@ export default function ModernDashboard() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {/* KPI Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -180,7 +182,7 @@ export default function ModernDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white p-6 rounded-xl shadow-sm"
+            className="bg-white p-8 rounded-xl shadow-sm"
           >
             <h2 className="text-lg font-semibold mb-4">Activité Mensuelle</h2>
             <BarChart
@@ -195,7 +197,7 @@ export default function ModernDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white p-6 rounded-xl shadow-sm"
+            className="bg-white p-8 rounded-xl shadow-sm"
           >
             <h2 className="text-lg font-semibold mb-4">Répartition par Genre</h2>
             <PieChart
@@ -210,7 +212,7 @@ export default function ModernDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white p-6 rounded-xl shadow-sm"
+            className="bg-white p-8 rounded-xl shadow-sm"
           >
             <h2 className="text-lg font-semibold mb-4">Niveau de Risque</h2>
             <ProgressCircle
@@ -226,7 +228,7 @@ export default function ModernDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white p-6 rounded-xl shadow-sm"
+            className="bg-white p-8 rounded-xl shadow-sm"
           >
             <h2 className="text-lg font-semibold mb-4">Diagnostics Fréquents</h2>
             <CalendarChart
@@ -238,7 +240,7 @@ export default function ModernDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white p-6 rounded-xl shadow-sm"
+            className="bg-white p-8 rounded-xl shadow-sm"
           >
             <h2 className="text-lg font-semibold mb-4">Patients Récents</h2>
             <DataTable
@@ -249,14 +251,18 @@ export default function ModernDashboard() {
                 {
                   header: "Statut",
                   accessor: "status",
-                  cell: (value) => (
-                    <span className={`px-2 py-1 rounded-full text-xs ${
-                      value === "Critique" ? "bg-red-100 text-red-800" :
-                      value === "Stable" ? "bg-green-100 text-green-800" :
-                      "bg-yellow-100 text-yellow-800"
-                    }`}>
-                    </span>
-                  )
+                  cell: (value: unknown) => {
+                    const status = value as string;
+                    return (
+                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                        status === "Critique" ? "bg-red-100 text-red-800" :
+                        status === "Stable" ? "bg-green-100 text-green-800" :
+                        "bg-yellow-100 text-yellow-800"
+                      }`}>
+                        {status}
+                      </span>
+                    );
+                  }
                 }
               ]}
               height={350}
@@ -282,7 +288,7 @@ interface KpiCardProps {
 // Component for KPI Cards
 function KpiCard({ icon, title, value, change, trend }: KpiCardProps) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition" title={`${title}: ${value}`}>
       <div className="flex justify-between">
         <div>
           <p className="text-sm font-medium text-gray-500">{title}</p>

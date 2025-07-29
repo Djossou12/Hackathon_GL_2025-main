@@ -6,20 +6,36 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/patients/ajouter/page": [
+    "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/patients/ajouter/page.js"
+      "static/chunks/app/login/page.js"
     ],
-    "/api/patients/route": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/patients/route.js"
+      "static/chunks/app/page.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dashboard/page.css",
+      "static/chunks/app/dashboard/page.js"
+    ],
+    "/api/stats/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/stats/route.js"
     ],
     "/patients/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/patients/page.js"
+    ],
+    "/api/patients/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/patients/route.js"
     ],
     "/patients/dossier/[id]/page": [
       "static/chunks/webpack.js",
