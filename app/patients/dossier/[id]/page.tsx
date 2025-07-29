@@ -159,7 +159,9 @@ export default function FicheMedicalePatient() {
         tableRows.push(row);
       });
 
-      (doc as any).autoTable({
+      // Use @ts-expect-error to suppress type error for autoTable because typings are missing
+      // @ts-expect-error: typings missing for autoTable
+      doc.autoTable({
         startY: 185,
         head: [tableColumn],
         body: tableRows,
@@ -176,6 +178,22 @@ export default function FicheMedicalePatient() {
 
     doc.save(`Fiche_Medicale_${patient.name.replace(/ /g, "_")}.pdf`);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Chargement...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-red-600">
+        <p>{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen p-6 print:p-0 bg-white text-black">
