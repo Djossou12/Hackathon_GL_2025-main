@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-  const { id } = params;
+function extractIdFromUrl(url: string) {
+  const match = url.match(/\/api\/patients\/([^\/]+)/);
+  return match ? match[1] : null;
+}
+
+export async function GET(req: NextRequest) {
+  const id = extractIdFromUrl(req.nextUrl.pathname);
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID manquant' }, { status: 400 });
+  }
 
   try {
     const patient = await prisma.patient.findUnique({ where: { id } });
@@ -18,8 +27,12 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function PUT(req: NextRequest) {
+  const id = extractIdFromUrl(req.nextUrl.pathname);
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID manquant' }, { status: 400 });
+  }
 
   try {
     const data = await req.json();
@@ -36,8 +49,12 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function DELETE(req: NextRequest) {
+  const id = extractIdFromUrl(req.nextUrl.pathname);
+
+  if (!id) {
+    return NextResponse.json({ error: 'ID manquant' }, { status: 400 });
+  }
 
   try {
     await prisma.patient.delete({ where: { id } });

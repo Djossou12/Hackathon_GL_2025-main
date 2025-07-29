@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI4CKD
 
-## Getting Started
+AI4CKD est une plateforme innovante qui utilise l'intelligence artificielle pour révolutionner le suivi néphrologique. Elle vise à améliorer la détection précoce, le suivi et la gestion des maladies rénales chroniques (MRC) grâce à des outils avancés de gestion des patients, d'analyse des données médicales et de visualisation.
 
-First, run the development server:
+---
+
+## Fonctionnalités principales
+
+- Gestion complète des patients : création, modification, consultation et suppression des dossiers patients.
+- Historique médical détaillé pour chaque patient, incluant les consultations, observations et prescriptions.
+- Tableau de bord analytique avec statistiques clés, graphiques et tendances sur les patients et leurs diagnostics.
+- Interface utilisateur protégée par authentification pour garantir la confidentialité des données.
+- Utilisation de l'intelligence artificielle pour améliorer le suivi et la prise de décision clinique.
+
+---
+
+## Technologies utilisées
+
+- **Next.js** : Framework React pour le rendu côté serveur et la génération de sites statiques.
+- **Prisma** : ORM pour la gestion de la base de données SQLite.
+- **SQLite** : Base de données légère embarquée.
+- **React** : Bibliothèque pour la construction d'interfaces utilisateur.
+- **Tailwind CSS** : Framework CSS utilitaire pour un design rapide et responsive.
+- **Framer Motion** : Bibliothèque d'animations pour React.
+
+---
+
+## Installation et configuration
+
+1. Cloner le dépôt :
+
+```bash
+git clone <url-du-depot>
+cd Hackathon_GL_2025-main
+```
+
+2. Installer les dépendances :
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. Configurer les variables d'environnement :
+
+Créer un fichier `.env` à la racine du projet avec la variable suivante :
+
+```
+DATABASE_URL="file:./dev.db"
+```
+
+4. Initialiser la base de données et appliquer les migrations :
+
+```bash
+npx prisma migrate dev
+```
+
+5. (Optionnel) Peupler la base de données avec des données de test :
+
+```bash
+npx ts-node prisma/seed.ts
+```
+
+---
+
+## Lancement du serveur de développement
+
+Pour démarrer le serveur en mode développement, exécutez :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puis ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API
 
-## Learn More
+L'application expose plusieurs endpoints API RESTful, notamment :
 
-To learn more about Next.js, take a look at the following resources:
+- `GET /api/patients/[id]` : Récupérer les informations d'un patient par son ID.
+- `PUT /api/patients/[id]` : Mettre à jour les informations d'un patient.
+- `DELETE /api/patients/[id]` : Supprimer un patient.
+- `GET /api/stats` : Récupérer les statistiques pour le tableau de bord (filtrage par plage de dates possible).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation et ressources
 
-## Deploy on Vercel
+- [Documentation Next.js](https://nextjs.org/docs) - pour en savoir plus sur Next.js.
+- [Tutoriel Next.js](https://nextjs.org/learn) - tutoriel interactif.
+- [Déploiement sur Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) - déploiement facile de l'application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licence
+
+Ce projet est sous licence MIT.
+
+---
+
+© AI4CKD - Tous droits réservés. Dispositif médical CE certifié.
