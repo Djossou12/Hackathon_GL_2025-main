@@ -1,16 +1,1 @@
-{
-  "/api/patients/[id]/history/route": "app/api/patients/[id]/history/route.js",
-  "/api/stats/route": "app/api/stats/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/patients/[id]/route": "app/api/patients/[id]/route.js",
-  "/api/patients/route": "app/api/patients/route.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/about/page": "app/about/page.js",
-  "/login/page": "app/login/page.js",
-  "/page": "app/page.js",
-  "/patients/ajouter/page": "app/patients/ajouter/page.js",
-  "/patients/dossier/[id]/page": "app/patients/dossier/[id]/page.js",
-  "/patients/page": "app/patients/page.js",
-  "/patients/modifier/[id]/page": "app/patients/modifier/[id]/page.js",
-  "/patients/[id]/completer/page": "app/patients/[id]/completer/page.js"
-}
+{}
